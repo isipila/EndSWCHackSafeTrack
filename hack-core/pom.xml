@@ -13,7 +13,7 @@
     <artifactId>hack-core</artifactId>
     <packaging>war</packaging>
 
-    <name>Conference Hack</name>
+    <name>Conference Hack - Core</name>
 
     <dependencies>
 	
@@ -222,7 +222,7 @@
     </dependencies>
 
     <build>
-        <finalName>rat</finalName>
+        <finalName>hack</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

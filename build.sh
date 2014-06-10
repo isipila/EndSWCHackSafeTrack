@@ -82,7 +82,6 @@ cd $PROJECT_ROOT
 # Build the project
 $M2_HOME/bin/mvn -Djetty.port=8888 clean verify
 
-ssh rat@git.diacora.com "sudo service rat-dev stop"
-scp rat-jetty/target/rat-jetty.jar rat@git.diacora.com:rat-jetty-dev.jar
-ssh rat@git.diacora.com "sudo service rat-dev start"
-ssh rat@git.diacora.com "cd ~rat/src; git pull --rebase; cd docs; jekyll build"
+ssh confhack@git.diacora.com "sudo service confhack stop"
+scp hack-jetty/target/hack-jetty.jar confhack@git.diacora.com:confhack.jar
+ssh confhack@git.diacora.com "sudo service confhack start"

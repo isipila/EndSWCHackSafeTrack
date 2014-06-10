@@ -13,7 +13,7 @@
         <module>hack-jetty</module>
     </modules>
 
-    <name>Risk Analysis Tool</name>
+    <name>Conference Hack</name>
     <url>http://www.bjss.com/</url>
 
     <properties>

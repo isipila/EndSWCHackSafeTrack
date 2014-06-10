@@ -68,7 +68,7 @@
     </dependencies>
 
     <build>
-        <finalName>rat-jetty</finalName>
+        <finalName>hack-jetty</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
