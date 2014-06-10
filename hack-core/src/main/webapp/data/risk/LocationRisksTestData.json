@@ -1,0 +1,13 @@
+[{
+    "item": "London",
+    "riskCurrency": "GBP",
+	"riskValue": 180000
+},{
+    "item": "boat",
+    "riskCurrency": "GBP",
+	"riskValue": 3000
+},{
+    "item": "spoon",
+    "riskCurrency": "GBP",
+	"riskValue": 250
+}]

@@ -1,0 +1,41 @@
+[{
+    "item": "CHF",
+    "riskValue": 180000,
+	"riskCurrency": "GBP"
+},{
+    "item": "TZS",
+    "riskValue": 170000,
+	"riskCurrency": "GBP"
+},{
+    "item": "EUR",
+    "riskValue": 156000,
+	"riskCurrency": "GBP"
+},{
+    "item": "GBP",
+    "riskValue": 120000,
+	"riskCurrency": "GBP"
+},{
+    "item": "USD",
+    "riskValue": 56000,
+	"riskCurrency": "GBP"
+},{
+    "item": "Other",
+    "riskValue": 20000,
+	"riskCurrency": "GBP"
+},{
+    "item": "CAD",
+    "riskValue": 18000,
+	"riskCurrency": "GBP"
+},{
+    "item": "AUD",
+    "riskValue": 17000,
+	"riskCurrency": "GBP"
+},{
+    "item": "SEK",
+    "riskValue": 17000,
+	"riskCurrency": "GBP"
+},{
+    "item": "NOK",
+    "riskValue": 2000,
+	"riskCurrency": "GBP"
+}]

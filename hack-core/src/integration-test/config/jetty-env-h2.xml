@@ -1,0 +1,14 @@
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+    <New id="IbacasDB" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg></Arg>
+        <Arg>jdbc/IbacasDB</Arg>
+        <Arg>
+            <New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <Set name="driverClass">org.h2.Driver</Set>
+                <Set name="jdbcUrl">jdbc:h2:mem:test</Set>
+                <Set name="user">username</Set>
+                <Set name="password">password</Set>
+            </New>
+        </Arg>
+    </New>
+</Configure>

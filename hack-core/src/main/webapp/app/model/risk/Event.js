@@ -1,0 +1,52 @@
+Ext.define('Rat.model.risk.Event', {
+    extend: 'Ext.data.Model',
+
+    fields: [{
+        name: 'eventId',
+        type: 'string'
+	}, {
+        name: 'securityId',
+        type: 'string'
+    }, {
+        name: 'securityCurrency',
+        type: 'string'
+    }, {
+        name: 'totalPosition',
+        type: 'int'
+    }, {
+        name: 'eventType',
+        type: 'string'
+    }, {
+        name: 'eventOptionType',
+        type: 'string'
+    }, {
+		name: 'eventTypeAdjustmentFactor',
+		type: 'float'
+	}, {
+        name: 'riskRealisationDate',
+        type: 'date',
+		dateFormat: 'Y-m-d'
+    }, {
+        name: 'archiveDate',
+        type: 'date',
+		dateFormat: 'Y-m-d'
+    }, {
+        name: 'countryOfIssue',
+        type: 'string'
+    }, {
+		name: 'countryOfIssueAdjustmentFactor',
+		type: 'float'
+	}, {
+        name: 'securityDescription',
+        type: 'string'
+    }, {
+		name: 'riskPerShare',
+		type: 'float'
+    }, {
+        name: 'totalRiskInBaseCurrency',
+        type: 'float'
+	}, {
+        name: 'totalRiskInSecurityCurrency',
+        type: 'float'
+    }]
+});

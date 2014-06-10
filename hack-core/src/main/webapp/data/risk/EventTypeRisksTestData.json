@@ -1,0 +1,41 @@
+[{
+    "item": "ACTV",
+    "riskValue": 180000,
+	"riskCurrency": "GBP"
+},{
+    "item": "ATTI",
+    "riskValue": 170000,
+	"riskCurrency": "GBP"
+},{
+    "item": "BIDS",
+    "riskValue": 156000,
+	"riskCurrency": "GBP"
+},{
+    "item": "BONU",
+    "riskValue": 120000,
+	"riskCurrency": "GBP"
+},{
+    "item": "BPUT",
+    "riskValue": 56000,
+	"riskCurrency": "GBP"
+},{
+    "item": "BRUP",
+    "riskValue": 20000,
+	"riskCurrency": "GBP"
+},{
+    "item": "CAPD",
+    "riskValue": 18000,
+	"riskCurrency": "GBP"
+},{
+    "item": "CAPG",
+    "riskValue": 17000,
+	"riskCurrency": "GBP"
+},{
+    "item": "CAPI",
+    "riskValue": 17000,
+	"riskCurrency": "GBP"
+},{
+    "item": "CERT",
+    "riskValue": 2000,
+	"riskCurrency": "GBP"
+}]

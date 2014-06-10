@@ -1,0 +1,42 @@
+{
+    "resourceOptimization": 7,
+    "processOptimization": 62,
+    "positionTypeMappings": [{
+        "positionType": "Long",
+        "percentage": 30
+    }, {
+        "positionType": "Short",
+        "percentage": 70
+    }],
+    "resourceLevelMappings": [{
+        "resourceLevel": 1,
+        "percentage": 100
+    }, {
+        "resourceLevel": 2,
+        "percentage": 90
+    }, {
+        "resourceLevel": 3,
+        "percentage": 80
+    }, {
+        "resourceLevel": 4,
+        "percentage": 70
+    }, {
+        "resourceLevel": 5,
+        "percentage": 60
+    }, {
+        "resourceLevel": 6,
+        "percentage": 50
+    }, {
+        "resourceLevel": 7,
+        "percentage": 40
+    }, {
+        "resourceLevel": 8,
+        "percentage": 30
+    }, {
+        "resourceLevel": 9,
+        "percentage": 20
+    }, {
+        "resourceLevel": 10,
+        "percentage": 10
+    }]
+}

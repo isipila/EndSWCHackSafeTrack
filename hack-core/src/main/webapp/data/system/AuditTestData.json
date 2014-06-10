@@ -1,0 +1,17 @@
+[{
+	"user": "Adam Stern",
+	"timeStamp": "2013-12-14",
+	"text": "Initial application set up"
+}, {
+	"user": "John Mountain",
+	"timeStamp": "2013-12-16",
+	"text": "Test settings",
+	"approver": "Adam Stern",
+	"approvalTimeStamp": "2013-12-16"
+}, {
+	"user": "Adam Stern",
+	"timeStamp": "2014-01-04",
+	"text": "Demo configuration",
+	"approver": "Another user",
+	"approvalTimeStamp": "2014-01-04"
+}]

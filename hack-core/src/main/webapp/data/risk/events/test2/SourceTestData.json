@@ -1,0 +1,38 @@
+{
+  "originalMessage" : "{1:F01FTIRGB2LAXXX0000000000}{2:I564IBACAS01XXXXN}{4:\n:16R:GENL\n:20C::CORP//2000000039606514\n:20C::SEME//2000000000001933\n:23G:NEWM\n:22F::CAEP//REOR\n:22F::CAEV//TEND\n:22F::CAMV//MAND\n:25D::PROC//COMP\n:16S:GENL\n:16R:USECU\n:35B:ISIN BRCOCEACNOR0\n/GB/B1YCJ89/\n/US/P3055S109/\nCIA ENERGET CEARA \nCOM NPV                    \n:16R:FIA\n:94B::PLIS//EXCH/BVMF\n:16S:FIA\n:16R:ACCTINFO\n:97A::SAFE//NONREF\n:16S:ACCTINFO\n:16S:USECU\n:16R:CADETL\n:22F::ESTA//WHOU\n:22F::OFFE//SQUE\n:70E::OFFO//ENERSIS SA                         \n:16S:CADETL\n:16R:CAOPTN\n:13A::CAON//001\n:22F::CAOP//CASH\n:17B::DFLT//N\n:69J::PWAL//UKWN\n:16R:CASHMOVE\n:22H::CRDB//CRED\n:98B::PAYD//UKWN\n:90B::OFFR//ACTU/BRL49,0000\n:16S:CASHMOVE\n:16S:CAOPTN\n-}$\n",
+  "corporateActionReference" : "2000000039606514",
+  "senderReference" : "2000000000001933",
+  "eventType" : "TEND",
+  "eventOptionType" : "MANDATORY",
+  "securitySedolCode" : "B1YCJ89",
+  "earliestEventDate" : null,
+  "earliestOptionDate" : null,
+  "exDate" : null,
+  "recordDate" : null,
+  "latestOptionDate" : null,
+  "minimumSecurityQuantity" : null,
+  "maximumSecurityQuantity" : null,
+  "offeror" : "ENERSIS SA",
+  "eventStage" : "WHOLLY_UNCONDITIONAL",
+  "warrantParity" : null,
+  "options" : [ {
+    "optionNumber" : 1,
+    "cash" : true,
+    "security" : false,
+    "marketDeadline" : null,
+    "movements" : [ {
+      "cashType" : null,
+      "cashValue" : {
+        "currency" : "BRL",
+        "amount" : 49.0000
+      },
+      "cashRate" : null,
+      "newSecuritySedolCode" : null,
+      "newSecurityPrice" : null,
+      "oldShares" : null,
+      "newShares" : null,
+      "paymentDate" : null,
+      "earlyPaymentDate" : null
+    } ]
+  } ]
+}

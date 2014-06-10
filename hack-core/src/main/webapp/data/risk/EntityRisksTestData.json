@@ -1,0 +1,9 @@
+[{
+    "item": "101",
+    "riskCurrency": "GBP",
+	"riskValue": 2342300
+},{
+    "item": "102",
+    "riskCurrency": "GBP",
+	"riskValue": 300000
+}]

@@ -1,0 +1,13 @@
+[{
+    "item": "LON",
+    "riskCurrency": "GBP",
+	"riskValue": 1000000
+},{
+    "item": "PAR",
+    "riskCurrency": "GBP",
+	"riskValue": 3000
+},{
+    "location": "FAR",
+    "riskCurrency": "GBP",
+	"riskValue": 250000
+}]

@@ -1,0 +1,27 @@
+[{
+  "code" : "101",
+  "name" : "Entity 1",
+  "processOptimisation" : 7,
+  "resourceOptimisation" : 83,
+  "processMappingRules": [{
+		'sequence' : 1,
+        'processingGroupCode' : 'LON',
+		'countryCode' : 'UK',
+		'eventOptionType' : 'MANDATORY'
+	}, {
+		'sequence' : 2,
+        'processingGroupCode' : 'PAR'
+	}]
+}, {
+  "code" : "102",
+  "name" : "Entity 2",
+  "processMappingRules": []
+}, {
+  "code" : "103",
+  "name" : "Entity 3",
+  "processMappingRules": []
+}, {
+  "code" : "104",
+  "name" : "Entity 4",
+  "processMappingRules": []
+}]

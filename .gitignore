@@ -1,0 +1,35 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+
+# Random
+.history
+dist
+logs
+target
+
+# IntelliJ stuff
+.idea
+*.iml
+out
+.idea_modules
+
+# Build stuff
+buildtools
+
+# Eclipse stuff
+.classpath
+.project
+/RUNNING_PID
+.settings
+.metadata
+
+# Mac stuff
+.DS_Store
+
+# H2 runtime file
+mem.h2.db

@@ -1,0 +1,19 @@
+[{
+	"code" : "LON",
+	"name" : "Global Custody London",
+	"locationCode" : "London",
+	"processOptimisation" : 3,
+	"resourceOptimisation" : 5
+}, {
+	"code" : "PAR",
+	"name" : "Paris Group",
+	"locationCode" : "boat"
+}, {
+	"code" : "FAR",
+	"name" : "Far East Custody Group",
+	"locationCode" : "boat"
+}, {
+	"code" : "AN",
+	"name" : "Another",
+	"locationCode" : "boat"
+}]
