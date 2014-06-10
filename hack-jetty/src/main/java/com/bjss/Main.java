@@ -27,7 +27,7 @@ public class Main {
     }
 
     public Main() {
-        final String configFile = System.getProperty("rat.config", null);
+        final String configFile = System.getProperty("hack.config", null);
 
         final ConstrettoBuilder constrettoBuilder = new ConstrettoBuilder();
         constrettoBuilder.createPropertiesStore()

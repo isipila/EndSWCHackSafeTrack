@@ -17,7 +17,7 @@
         <!-- The WAR file -->
         <dependency>
             <groupId>com.bjss</groupId>
-            <artifactId>rat-core</artifactId>
+            <artifactId>hack-core</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
@@ -111,7 +111,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>com.bjss</groupId>
-					<artifactId>rat-core</artifactId>
+					<artifactId>hack-core</artifactId>
 					<version>${project.version}</version>
 				</dependency>
 			</dependencies>
