@@ -369,23 +369,23 @@
                         <configfiles>
                             <configfile>
                                 <file>${project.basedir}/src/integration-test/config/${jetty.environment}.xml</file>
-                                <tofile>webapps/rat/WEB-INF/jetty-env.xml</tofile>
+                                <tofile>webapps/hack/WEB-INF/jetty-env.xml</tofile>
                             </configfile>
                             <configfile>
                                 <file>${project.basedir}/src/integration-test/config/logback-test.xml</file>
-                                <todir>webapps/rat/WEB-INF/classes</todir>
+                                <todir>webapps/hack/WEB-INF/classes</todir>
                             </configfile>
                         </configfiles>
                     </configuration>
                     <deployables>
                         <deployable>
                             <groupId>com.bjss</groupId>
-                            <artifactId>rat-core</artifactId>
+                            <artifactId>hack-core</artifactId>
                             <type>war</type>
                             <!--
                               Override location to point to the exploded webapp.
                               -->
-                            <location>rat-core/target/rat</location>
+                            <location>hack-core/target/hack</location>
                             <properties>
                                 <context>/test</context>
                             </properties>
