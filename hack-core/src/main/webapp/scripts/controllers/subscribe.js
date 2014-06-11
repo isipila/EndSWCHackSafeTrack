@@ -8,27 +8,30 @@
  * Controller of the safeTrackWebApp
  */
 angular.module('safeTrackWebApp')
-  .controller('ReportCtrl', function ($scope, $sce, $http, $timeout, promiseTracker) {
+  .controller('RegisterCtrl', function ($scope, $sce, $http, $timeout, promiseTracker) {
 
-        $scope.reportSent = false
-        $scope.sendingReport = promiseTracker('sendingReport')
+        $scope.subscriptionSent = false
 
-        $scope.report = {
-            date_time: new Date(),
-            message: '',
-            geo_code: null
+        $scope.sendingSubscription = promiseTracker('sendingSubscription')
+
+        $scope.address = ''
+
+        $scope.subscription = {
+            telephone: '',
+            location: null
         }
 
-        $scope.submitReport = function() {
-            $http.post('api/incident', $scope.report, {tracker: $scope.sendingReport}).success(function() {
-                $scope.reportSent = true
-                $scope.report = {
-                    date_time: new Date(),
-                    message: '',
-                    geo_code: null
+
+        $scope.submitSubscription = function() {
+            $http.post('api/subscribe', $scope.subscription, {tracker: $scope.sendingSubscription}).success(function() {
+                $scope.subscriptionSent = true
+                $scope.subscription = {
+                    telephone: '',
+                    location: null
                 }
+                $scope.address = ''
                 $timeout(function() {
-                    $scope.reportSent = false
+                    $scope.subscriptionSent = false
                 }, 3000)
             })
         }
@@ -39,7 +42,7 @@ angular.module('safeTrackWebApp')
                 $scope.map.center.longitude = details.geometry.location.lng()
                 $scope.map.zoom = zoom(details.geometry.viewport)
                 $scope.marker = $scope.map.center
-                $scope.report.geo_code = details
+                $scope.subscription.location = details.geometry.location
             }
         }
 

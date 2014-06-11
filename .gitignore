@@ -32,3 +32,6 @@ buildtools
 
 # H2 runtime file
 mem.h2.db
+
+#node
+node_modules

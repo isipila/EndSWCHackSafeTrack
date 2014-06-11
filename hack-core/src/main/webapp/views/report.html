@@ -1,7 +1,7 @@
 <div ng-show="reportSent">
     <h3>Thank you for your report.</h3>
 </div>
-<form name="form" role="form" ng-hide="reportSent" novalidate>
+<form name="form" role="form" ng-hide="reportSent" novalidate ng-init="init()">
     <div class="form-group">
         <label for="address">Address</label>
         <input type="text" id="address" ng-model="autocomplete" required
@@ -9,7 +9,7 @@
                ng-autocomplete="result" placeholder="Enter address, town, postal code"
                details="details" options="options"/>
     </div>
-    <google-map center="map.center" zoom="map.zoom">
+    <google-map center="map.center" zoom="map.zoom" refresh="{{refreshGoogleMap}}">
         <marker coords="marker"/>
     </google-map>
     <div class="form-group">
@@ -17,11 +17,11 @@
         <div class="dropdown">
             <a class="dropdown-toggle my-toggle-select" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="">
                 <div class="input-append">
-                    <span class="form-control">{{report.dateTime | date: 'EEEE, MMMM d, y, hh a'}}</span>
+                    <span class="form-control">{{report.date_time | date: 'EEEE, MMMM d, y, hh a'}}</span>
                 </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <datetimepicker data-ng-model="report.dateTime"
+                <datetimepicker data-ng-model="report.date_time"
                                 data-datetimepicker-config="{ dropdownSelector: '.my-toggle-select', minView: 'hour' }"></datetimepicker>
             </ul>
         </div>
