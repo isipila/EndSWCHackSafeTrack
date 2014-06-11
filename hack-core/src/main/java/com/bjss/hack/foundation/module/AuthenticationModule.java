@@ -43,11 +43,11 @@ public class AuthenticationModule extends ShiroWebModule {
         Key<? extends Filter> serviceAuthKey = System.getProperty("rat.integrationtest") != null ? AUTHC_BASIC : AUTHC;
         
         addFilterChain("/login", ANON);
-        addFilterChain("/app/*.js", ANON);
-        addFilterChain("/resources/**", ANON);
-        addFilterChain("/extjs/**", ANON);
-        addFilterChain("/javascript/**", ANON);
-        addFilterChain("/api/**", serviceAuthKey);
-        addFilterChain("/**", AUTHC);        
+        addFilterChain("/bower_components/**", ANON);
+        addFilterChain("/images/**", ANON);
+        addFilterChain("/scripts/**", ANON);
+        addFilterChain("/styles/**", ANON);
+        addFilterChain("/views/**", ANON);
+        addFilterChain("/api/**", ANON);
     }
 }
