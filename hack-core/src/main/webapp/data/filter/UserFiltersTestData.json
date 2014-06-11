@@ -1,9 +1,0 @@
-[ {
-  "code" : "Fil1",
-  "name" : "Test Filter 1",
-  "content" : "eventTypeIn=ACCU,ACTV,ATTI"
-}, {
-  "code" : "Fil2",
-  "name" : "Test Filter 2",
-  "content" : "entityIn=101&eventTypeIn=DVOP"
-} ]

@@ -1,7 +1,0 @@
-{
-  username : "Bob",
-  fullName : "Bob the Risk Man",
-  location : "Button Spoon",
-  enabled : true,
-  roles : ["admin"]
-}
