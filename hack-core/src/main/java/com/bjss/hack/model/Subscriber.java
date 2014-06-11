@@ -2,9 +2,13 @@ package com.bjss.hack.model;
 
 public class Subscriber {
 
-	private final String telephone;
+	private String telephone;
 	
-	private final Location location;
+	private Location location;
+
+	public Subscriber() {
+		super();
+	}
 
 	public Subscriber(String telephone, Location location) {
 		super();
@@ -16,8 +20,16 @@ public class Subscriber {
 		return telephone;
 	}
 
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
 	public Location getLocation() {
 		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 	
 }
