@@ -31,5 +31,9 @@ public class Subscriber {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Subscriber " + telephone + ", " + location;
+	}
 }
