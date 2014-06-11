@@ -57,4 +57,9 @@ public class Location {
 		final double result = Math.toDegrees(Math.atan2( dlon ,  dphi )); 
 		return result < 0 ? result + 360D : result;
 	}
+	
+	@Override
+	public String toString() {
+		return "Location (" + lat + ", " + lng + ")";
+	}
 }
