@@ -37,11 +37,4 @@ public class LocationService {
 		}
 	}
 	
-	public Location location(GeocoderResult geocoderResult) {
-		if (geocoderResult == null) {
-			return null;
-		} else {
-			return new Location(geocoderResult.getGeometry().getLocation().getLat(), geocoderResult.getGeometry().getLocation().getLng());
-		}
-	}
 }

@@ -47,6 +47,10 @@ public class Incident {
 		this.message = message;
 	}
 	
+	public Location getLocation() {
+		return Location.fromGeoCode(geoCode);
+	}
+	
 	@Override
 	public String toString() {
 		return "Incident at " + geoCode + " at " + dateTime + ": " + message;

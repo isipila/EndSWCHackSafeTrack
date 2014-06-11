@@ -2,6 +2,8 @@ package com.bjss.hack.model;
 
 import java.math.BigDecimal;
 
+import com.google.code.geocoder.model.GeocoderResult;
+
 public class Location {
 
 	private static final double R = 6372.795477598; // Radius of earth km
@@ -18,6 +20,14 @@ public class Location {
 		super();
 		this.lat = lat;
 		this.lng = lng;
+	}
+
+	public static Location fromGeoCode(GeocoderResult geocoderResult) {
+		if (geocoderResult == null) {
+			return null;
+		} else {
+			return new Location(geocoderResult.getGeometry().getLocation().getLat(), geocoderResult.getGeometry().getLocation().getLng());
+		}
 	}
 
 	public BigDecimal getLat() {
