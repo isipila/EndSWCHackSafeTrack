@@ -1,7 +1,7 @@
 <div ng-show="reportSent">
     <h3>Thank you for your report.</h3>
 </div>
-<form name="form" role="form" ng-hide="reportSent" novalidate ng-init="init()">
+<form name="form" role="form" ng-hide="reportSent" novalidate ng-init="initialize()">
     <div class="form-group">
         <label for="address">Address</label>
         <input type="text" id="address" ng-model="autocomplete" required

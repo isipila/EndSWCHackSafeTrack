@@ -10,27 +10,43 @@
 angular.module('safeTrackWebApp')
   .controller('ReportCtrl', function ($scope, $sce, $http, $timeout, promiseTracker) {
 
-        $scope.reportSent = false
         $scope.sendingReport = promiseTracker('sendingReport')
 
-        $scope.report = {
-            date_time: new Date(),
-            message: '',
-            geo_code: null
+        $scope.initialize = function() {
+            $scope.initializeMap()
+            $scope.initializeReport()
         }
 
         $scope.submitReport = function() {
+            $scope.report.geo_code.geometry.location.lat = $scope.map.center.latitude
+            $scope.report.geo_code.geometry.location.lng = $scope.map.center.longitude
             $http.post('api/incident', $scope.report, {tracker: $scope.sendingReport}).success(function() {
                 $scope.reportSent = true
-                $scope.report = {
-                    date_time: new Date(),
-                    message: '',
-                    geo_code: null
-                }
                 $timeout(function() {
-                    $scope.reportSent = false
+                    $scope.initializeMap()
+                    $scope.initializeReport()
                 }, 3000)
             })
+        }
+
+        $scope.initializeReport = function() {
+            $scope.reportSent = false
+            $scope.report = {
+                date_time: new Date(),
+                message: '',
+                geo_code: null
+            }
+        }
+
+        $scope.initializeMap = function() {
+            $scope.map = {
+                center: {
+                    latitude: 34,
+                    longitude: 37
+                },
+                zoom: 2
+            }
+            $scope.marker = {}
         }
 
         $scope.updateMap = function(details) {
@@ -42,16 +58,6 @@ angular.module('safeTrackWebApp')
                 $scope.report.geo_code = details
             }
         }
-
-        $scope.marker = {}
-
-        $scope.map = {
-            center: {
-                latitude: 34,
-                longitude: 37
-            },
-            zoom: 2
-        };
 
         function zoom(viewport) {
             function latRad(lat) {

@@ -10,30 +10,42 @@
 angular.module('safeTrackWebApp')
   .controller('RegisterCtrl', function ($scope, $sce, $http, $timeout, promiseTracker) {
 
-        $scope.subscriptionSent = false
-
         $scope.sendingSubscription = promiseTracker('sendingSubscription')
 
-        $scope.address = ''
-
-        $scope.subscription = {
-            telephone: '',
-            location: null
+        $scope.initialize = function() {
+            $scope.initializeMap()
+            $scope.initializeSubscription()
         }
 
-
         $scope.submitSubscription = function() {
+            $scope.subscription.location.lat = $scope.map.center.latitude
+            $scope.subscription.location.lng = $scope.map.center.longitude
             $http.post('api/subscribe', $scope.subscription, {tracker: $scope.sendingSubscription}).success(function() {
                 $scope.subscriptionSent = true
-                $scope.subscription = {
-                    telephone: '',
-                    location: null
-                }
-                $scope.address = ''
                 $timeout(function() {
-                    $scope.subscriptionSent = false
+                    $scope.initializeMap()
+                    $scope.initializeSubscription()
                 }, 3000)
             })
+        }
+
+        $scope.initializeSubscription = function() {
+            $scope.subscription = {
+                telephone: '',
+                location: null
+            }
+            $scope.subscriptionSent = false
+        }
+
+        $scope.initializeMap = function(details) {
+            $scope.map = {
+                center: {
+                    latitude: 34,
+                    longitude: 37
+                },
+                zoom: 2
+            }
+            $scope.marker = {}
         }
 
         $scope.updateMap = function(details) {
@@ -45,16 +57,6 @@ angular.module('safeTrackWebApp')
                 $scope.subscription.location = details.geometry.location
             }
         }
-
-        $scope.marker = {}
-
-        $scope.map = {
-            center: {
-                latitude: 34,
-                longitude: 37
-            },
-            zoom: 2
-        };
 
         function zoom(viewport) {
             function latRad(lat) {
