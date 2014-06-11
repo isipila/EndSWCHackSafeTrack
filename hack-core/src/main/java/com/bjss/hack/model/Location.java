@@ -6,9 +6,13 @@ public class Location {
 
 	private static final double R = 6372.795477598; // Radius of earth km
 	
-	private final BigDecimal lat;
+	private BigDecimal lat;
 	
-	private final BigDecimal lng;
+	private BigDecimal lng;
+	
+	public Location() {
+		super();
+	}
 
 	public Location(BigDecimal lat, BigDecimal lng) {
 		super();
@@ -20,8 +24,16 @@ public class Location {
 		return lat;
 	}
 
+	public void setLat(BigDecimal lat) {
+		this.lat = lat;
+	}
+
 	public BigDecimal getLng() {
 		return lng;
+	}
+
+	public void setLng(BigDecimal lng) {
+		this.lng = lng;
 	}
 
 	public double rangeTo(Location target) {
