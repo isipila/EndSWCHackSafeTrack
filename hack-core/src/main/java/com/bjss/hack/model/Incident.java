@@ -12,6 +12,13 @@ public class Incident {
 	
 	private String message;
 
+	public Incident(GeocoderResult geoCode, DateTime dateTime, String message) {
+		super();
+		this.geoCode = geoCode;
+		this.dateTime = dateTime;
+		this.message = message;
+	}
+
 	public GeocoderResult getGeoCode() {
 		return geoCode;
 	}

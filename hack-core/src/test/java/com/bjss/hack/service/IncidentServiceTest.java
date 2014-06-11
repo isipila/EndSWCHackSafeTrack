@@ -2,6 +2,7 @@ package com.bjss.hack.service;
 
 import java.math.BigDecimal;
 
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -19,12 +20,12 @@ public class IncidentServiceTest {
 	public void canGenerateMessages() {
 		Location london = new Location(new BigDecimal("51.508515"), new BigDecimal("-0.1254872"));
 		Location nearLondon = new Location(new BigDecimal("51.518515"), new BigDecimal("-0.1254872"));
-			
-		final Incident incident = new Incident();
-		incident.setGeoCode(new GeocoderResult());
-		incident.getGeoCode().setGeometry(new GeocoderGeometry());
-		incident.getGeoCode().getGeometry().setLocation(new LatLng(nearLondon.getLat(), nearLondon.getLng()));
-		incident.setMessage("Message text");
+		
+		final GeocoderResult georesult = new GeocoderResult();
+		georesult.setGeometry(new GeocoderGeometry());
+		georesult.getGeometry().setLocation(new LatLng(nearLondon.getLat(), nearLondon.getLng()));
+
+		final Incident incident = new Incident(georesult, DateTime.now(), "Message text");
 		
 		SubscriberStore.INSTANCE.addSubscriber(new Subscriber("1234", london));
 		

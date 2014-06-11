@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.bjss.hack.model.Incident;
+import com.bjss.hack.model.IncidentStore;
+import com.bjss.hack.model.SubscriberStore;
 import com.bjss.hack.service.IncidentService;
 import com.bjss.hack.service.LocationService;
 import com.google.code.geocoder.model.GeocodeResponse;
@@ -34,20 +36,22 @@ public class IncidentController {
     @POST
     @Produces({ "application/json" })
     public Response reportIncident(final Incident incident) {
-    	LOG.info("Incident reported: " + incident);
+    	LOG.info("Incident endpoint invoked");
     	incidentService.report(incident);
         return Response.ok("Hello").build();
+    }
+
+    @GET
+    @Produces({ "application/json" })
+    public Response listIncidents() {
+    	return Response.ok(IncidentStore.INSTANCE.allIncidents()).build();
     }
 
     @GET
     @Path("sample")	
     @Produces({ "application/json" })
     public Response sampleJson() {
-    	Incident result = new Incident();
-    	
-    	result.setDateTime(new DateTime(2014, 06, 11, 0, 0));
-    	result.setMessage("Test message");
-    	result.setGeoCode(new GeocoderResult());
+    	Incident result = new Incident(new GeocoderResult(), new DateTime(2014, 06, 11, 0, 0),"Test message");
     	
     	return Response.ok(result).build();
     }

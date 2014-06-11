@@ -1,12 +1,19 @@
 package com.bjss.hack.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.bjss.hack.model.Incident;
+import com.bjss.hack.model.IncidentStore;
 import com.bjss.hack.model.Location;
 import com.bjss.hack.model.Subscriber;
 import com.bjss.hack.model.SubscriberStore;
+import com.bjss.hack.route.SmsSubscriptionServlet;
 import com.google.inject.Inject;
 
 public class IncidentService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(IncidentService.class);
 
 	private final MessageService messageService;
 	
@@ -21,6 +28,10 @@ public class IncidentService {
 	}
 
 	public void report(final Incident incident) {
+		LOG.info("Incident reported: " + incident);
+		
+		IncidentStore.INSTANCE.addIncident(incident);
+		
 		// Find any close registered users
 		final Location incidentLocation = locationService.location(incident.getGeoCode());
 		

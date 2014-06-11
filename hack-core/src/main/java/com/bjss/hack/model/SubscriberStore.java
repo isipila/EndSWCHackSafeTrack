@@ -16,6 +16,10 @@ public enum SubscriberStore {
 		return subscribers.put(subscriber.getTelephone(), subscriber) != null;
 	}
 
+	public Iterable<Subscriber> allSubscribers() {
+		return subscribers.values();
+	}
+	
 	public Iterable<Subscriber> nearbySubscribers(Location incidentLocation) {
 		final List<Subscriber> result = new ArrayList<Subscriber>();
 		for (final Subscriber candidate : subscribers.values()) {
