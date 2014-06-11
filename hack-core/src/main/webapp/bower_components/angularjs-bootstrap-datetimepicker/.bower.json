@@ -1,0 +1,45 @@
+{
+  "name": "angularjs-bootstrap-datetimepicker",
+  "version": "0.1.0",
+  "authors": [
+    "ronliu <ronliu2k@gmail.com>"
+  ],
+  "description": "angular directive for bootstrap datetimepicker",
+  "keywords": [
+    "angular",
+    "directive",
+    "boostrap",
+    "datetimepicker",
+    "datepicker",
+    "timepicker"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "smalot-bootstrap-datetimepicker": "latest",
+    "angular": ">1.1.0",
+    "jquery": ">1.8.0",
+    "bootstrap": "~2.3.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.11"
+  },
+  "ignore": [
+    "bower_components",
+    "coverage",
+    "bower_components",
+    "karma.conf.js",
+    "Gruntfile.js",
+    "package.json",
+    ".gitignore"
+  ],
+  "homepage": "https://github.com/ron-liu/angularjs-bootstrap-datetimepicker",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "e99e0464ab7b493063a1c96f6c82640d23828ac4"
+  },
+  "_source": "git://github.com/ron-liu/angularjs-bootstrap-datetimepicker.git",
+  "_target": "~0.1.0",
+  "_originalSource": "angularjs-bootstrap-datetimepicker"
+}

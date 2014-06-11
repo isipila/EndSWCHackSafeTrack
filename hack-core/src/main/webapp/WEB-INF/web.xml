@@ -17,7 +17,7 @@
     </filter-mapping>
 
     <listener>
-        <listener-class>com.bjss.foundation.ApplicationServletContextListener</listener-class>
+        <listener-class>com.bjss.hack.foundation.ApplicationServletContextListener</listener-class>
     </listener>
 
     <resource-ref>

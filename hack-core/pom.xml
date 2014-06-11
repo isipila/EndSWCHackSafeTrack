@@ -16,6 +16,11 @@
     <name>Conference Hack - Core</name>
 
     <dependencies>
+	  <dependency>
+    <groupId>com.google.code.geocoder-java</groupId>
+    <artifactId>geocoder-java</artifactId>
+    <version>0.16</version>
+  </dependency>
 	
 		<dependency>
 			<groupId>com.twilio.sdk</groupId>
@@ -74,22 +79,6 @@
             <artifactId>modelmapper</artifactId>
         </dependency>
 
-        <!-- Server push technology -->
-        <dependency>
-            <groupId>org.atmosphere</groupId>
-            <artifactId>atmosphere-runtime</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.atmosphere</groupId>
-            <artifactId>atmosphere-guice</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.atmosphere.client</groupId>
-            <artifactId>javascript</artifactId>
-            <version>${atmosphere.version}</version>
-            <type>war</type>
-        </dependency>
-        
         <!-- Authentication / Authorisation -->
         <dependency>
             <groupId>org.apache.shiro</groupId>
@@ -200,23 +189,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.jayway.restassured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy-all</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jfairy</groupId>
-            <artifactId>jfairy</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.atmosphere</groupId>
-            <artifactId>wasync</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

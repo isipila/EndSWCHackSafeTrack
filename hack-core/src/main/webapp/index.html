@@ -1,17 +1,95 @@
-<html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-		<title>CARMA</title>
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+      <link rel="stylesheet" href="bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+      <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="safeTrackWebApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#report" data-toggle="tab">Report Act of Violance</a></li>
+          <li><a href="#heat-map" data-toggle="tab">Map</a></li>
+          <li><a href="#about" data-toggle="tab">About</a></li>
+          <li><a href="#contact" data-toggle="tab">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">SafeTrack</h3>
+      </div>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="report" ng-include="'views/report.html'" ng-controller="ReportCtrl"></div>
+        <div class="tab-pane" id="heat-map" ng-include="'views/heat-map.html'" ng-controller="HeatMapCtrl"></div>
+        <div class="tab-pane" id="about">
+            <h1>Lorem Ipsum</h1>
+            <div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec neque sem, feugiat eu eleifend ac, consectetur rutrum dolor. Aenean condimentum libero id scelerisque hendrerit. Mauris rutrum tempus enim eu consectetur. Cras accumsan odio ut sodales interdum. Ut varius ultrices quam, nec aliquam felis dignissim malesuada. Duis nec volutpat odio. Aenean placerat urna enim, id ultricies arcu fringilla tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed egestas faucibus aliquet. Duis porta at erat sed cursus. Etiam cursus nisi elit, eget bibendum diam facilisis sit amet. Vestibulum viverra rutrum arcu nec convallis.
+                </p>
+                <p>
+                    Mauris placerat purus in libero vehicula dignissim at id nunc. Nam vehicula nibh vel ipsum auctor tempus. Fusce at risus id mauris adipiscing consectetur. Nulla scelerisque vel elit et dictum. Pellentesque suscipit aliquet lacus ut lobortis. In sagittis luctus velit at eleifend. Donec suscipit dictum libero eu hendrerit. Phasellus a mi at augue vestibulum blandit. Fusce euismod malesuada leo, et sagittis augue tempus non. Nam vitae metus sed felis iaculis viverra ut vitae turpis. Integer tristique volutpat eros sed imperdiet. Etiam gravida lacus nec metus mollis sollicitudin. Etiam in eros vitae metus tincidunt fringilla accumsan in tortor. Nam blandit erat in varius consectetur. Nullam venenatis tortor urna, quis malesuada turpis egestas id.
+                </p>
+            </div>
+        </div>
+        <div class="tab-pane" id="contact">
+            <div class="container marketing">
+                <div class="row featurette">
+                    <div class="col-md-5">
+                        <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=">
+                    </div>
+                    <div class="col-md-7">
+                        <h2 class="featurette-heading">Oh yeah, it's that good.</h2>
+                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src='//maps.googleapis.com/maps/api/js?libraries=places&sensor=false'></script>
+    <script src='bower_components/lodash/dist/lodash.underscore.min.js'></script>
+    <script src='bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
+    <script src="bower_components/ngAutocomplete/src/ngAutocomplete.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="bower_components/moment/moment.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+    <script src="bower_components/angular-promise-tracker/promise-tracker.js"></script>
+    <script src="bower_components/angular-promise-tracker/promise-tracker-http-interceptor.js"></script>
 
 
-		<link rel="shortcut icon" type="image/x-icon" href="resources/icons/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css">
-		<link rel="stylesheet" type="text/css" href="resources/css/application.css">
-		<script type="text/javascript" src="extjs/ext-all.js"></script>
-		<script type="text/javascript" src="javascript/atmosphere.js"></script>
-		<script type="text/javascript" src="javascript/polyfill.js"></script>
-		<script type="text/javascript" src="app/Application.js"></script>
-	</head>
-	<body>
-	</body>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/report.js"></script>
+    <script src="scripts/controllers/heat-map.js"></script>
+        <!-- endbuild -->
+</body>
 </html>
