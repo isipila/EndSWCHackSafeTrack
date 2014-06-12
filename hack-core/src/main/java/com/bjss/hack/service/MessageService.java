@@ -16,8 +16,9 @@ public class MessageService {
 
     private static final Logger LOG = LoggerFactory.getLogger(MessageService.class);
 
-	public static final String ACCOUNT_SID = "AC81eec98c34ca52bae5f95b0e5f0c8963";
-	public static final String AUTH_TOKEN = "b4883ae964809101a103bb74a23360da";
+    //You need these tokens to send and receive SMSs
+	public static final String ACCOUNT_SID = "";
+	public static final String AUTH_TOKEN = "";
 	
 	public void send(String number, String message) {
 	    LOG.info("Sending message " + message + " to " + number);
