@@ -12,6 +12,10 @@ angular.module('safeTrackWebApp')
 
         $scope.sendingReport = promiseTracker('sendingReport')
 
+        $('a[href="#report"]').on('shown.bs.tab', function (e) {
+            $scope.initialize()
+        })
+
         $scope.initialize = function() {
             $scope.initializeMap()
             $scope.initializeReport()
@@ -47,6 +51,7 @@ angular.module('safeTrackWebApp')
                 zoom: 2
             }
             $scope.marker = {}
+            reloadMap()
         }
 
         $scope.updateMap = function(details) {
@@ -56,6 +61,15 @@ angular.module('safeTrackWebApp')
                 $scope.map.zoom = zoom(details.geometry.viewport)
                 $scope.marker = $scope.map.center
                 $scope.report.geo_code = details
+            }
+        }
+
+        function reloadMap() {
+            var mapEl = angular.element(document.querySelector('#report .angular-google-map'));
+            var iScope = mapEl.isolateScope();
+            if (iScope) {
+                var map = iScope.map;
+                google.maps.event.trigger(map, "resize");
             }
         }
 
