@@ -17,6 +17,8 @@ angular.module('safeTrackWebApp')
             $scope.initialize()
         })
 
+        $scope.autocomplete = ''
+
         $scope.initialize = function() {
             $scope.initializeMap()
             $scope.initializeReport()
@@ -28,6 +30,7 @@ angular.module('safeTrackWebApp')
             $http.post('api/incident', $scope.report, {tracker: $scope.sendingReport}).success(function() {
                 $scope.reportSent = true
                 $timeout(function() {
+                    $scope.autocomplete = ''
                     $scope.initializeMap()
                     $scope.initializeReport()
                 }, 3000)

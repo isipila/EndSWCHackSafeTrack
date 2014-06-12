@@ -8,15 +8,16 @@
  * Controller of the safeTrackWebApp
  */
 angular.module('safeTrackWebApp')
-  .controller('RegisterCtrl', function ($scope, $sce, $http, $timeout, promiseTracker) {
+  .controller('SubscribeCtrl', function ($scope, $sce, $http, $timeout, promiseTracker) {
 
         $scope.sendingSubscription = promiseTracker('sendingSubscription')
 
         $('a[href="#subscribe"]').on('shown.bs.tab', function (e) {
-            $scope.initializeMap()
             reloadMap()
-            $scope.initializeMap()
+            $scope.initialize()
         })
+
+        $scope.autocomplete = ''
 
         $scope.initialize = function() {
             $scope.initializeMap()
@@ -29,6 +30,7 @@ angular.module('safeTrackWebApp')
             $http.post('api/subscribe', $scope.subscription, {tracker: $scope.sendingSubscription}).success(function() {
                 $scope.subscriptionSent = true
                 $timeout(function() {
+                    $scope.autocomplete = ''
                     $scope.initializeMap()
                     $scope.initializeSubscription()
                 }, 3000)

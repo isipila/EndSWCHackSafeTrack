@@ -1,35 +1,37 @@
-<div ng-show="reportSent">
-    <h3>Thank you for your report.</h3>
-</div>
-<form name="form" role="form" ng-hide="reportSent" novalidate ng-init="initialize()">
-    <div class="form-group">
-        <label for="address">Address</label>
-        <input type="text" id="address" ng-model="autocomplete" required
-               ng-change="updateMap(details)" class="form-control"
-               ng-autocomplete="result" placeholder="Enter address, town, postal code"
-               details="details" options="options"/>
+<div ng-controller="ReportCtrl">
+    <div ng-show="reportSent">
+        <h3>Thank you for your report.</h3>
     </div>
-    <google-map center="map.center" zoom="map.zoom" refresh="{{refreshGoogleMap}}">
-        <marker coords="marker"/>
-    </google-map>
-    <div class="form-group">
-        <label for="time">Time</label>
-        <div class="dropdown">
-            <a class="dropdown-toggle my-toggle-select" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="">
-                <div class="input-append">
-                    <span class="form-control">{{report.date_time | date: 'EEEE, MMMM d, y, hh a'}}</span>
-                </div>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <datetimepicker data-ng-model="report.date_time"
-                                data-datetimepicker-config="{ dropdownSelector: '.my-toggle-select', minView: 'hour' }"></datetimepicker>
-            </ul>
+    <form name="form" role="form" ng-hide="reportSent" novalidate ng-init="initialize()">
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" ng-model="autocomplete" required
+                   ng-change="updateMap(details)" class="form-control"
+                   ng-autocomplete="result" placeholder="Enter address, town, postal code"
+                   details="details" options="options"/>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="message">Describe what took place</label>
-        <textarea id="message" ng-model="report.message" class="form-control" rows="3"></textarea>
-    </div>
-    <button type="button" ng-disabled="form.$invalid || sendingReport.active()" ng-click="submitReport()" class="btn btn-default">Submit</button>
-    <span id="sendingReport" ng-show="sendingReport.active()" class="loading"></span>
-</form>
+        <google-map center="map.center" zoom="map.zoom">
+            <marker coords="marker"/>
+        </google-map>
+        <div class="form-group">
+            <label for="time">Time</label>
+            <div class="dropdown">
+                <a class="dropdown-toggle my-toggle-select" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="">
+                    <div class="input-append">
+                        <span class="form-control">{{report.date_time | date: 'EEEE, MMMM d, y, hh a'}}</span>
+                    </div>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <datetimepicker data-ng-model="report.date_time"
+                                    data-datetimepicker-config="{ dropdownSelector: '.my-toggle-select', minView: 'hour' }"></datetimepicker>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="message">Describe what took place</label>
+            <textarea id="message" ng-model="report.message" class="form-control" rows="3"></textarea>
+        </div>
+        <button type="button" ng-disabled="form.$invalid || sendingReport.active()" ng-click="submitReport()" class="btn btn-default">Submit</button>
+        <span id="sendingReport" ng-show="sendingReport.active()" class="loading"></span>
+    </form>
+</div>
