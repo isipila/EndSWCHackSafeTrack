@@ -37,7 +37,7 @@ public class IncidentController {
     @Produces({ "application/json" })
     public Response reportIncident(final Incident incident) {
     	LOG.info("Incident endpoint invoked");
-    	incidentService.report(incident);
+   		incidentService.report(incident);
         return Response.ok("Hello").build();
     }
 

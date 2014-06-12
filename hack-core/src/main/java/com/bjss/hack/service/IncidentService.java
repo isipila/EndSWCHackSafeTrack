@@ -32,7 +32,11 @@ public class IncidentService {
 		final Location incidentLocation = Location.fromGeoCode(incident.getGeoCode());
 		
 		for (Subscriber subscriber : SubscriberStore.INSTANCE.nearbySubscribers(incidentLocation)) {
-			messageService.send(subscriber.getTelephone(), incidentMessage(incident, confirmed, incidentLocation, subscriber));
+			try {
+				messageService.send(subscriber.getTelephone(), incidentMessage(incident, confirmed, incidentLocation, subscriber));
+			} catch (Exception e) {
+				LOG.error("Error sending notification", e);
+			}
 		}
 	}
 	
