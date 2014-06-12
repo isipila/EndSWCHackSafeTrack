@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import org.joda.time.DateTime;
 
@@ -38,7 +36,6 @@ public enum IncidentStore {
 	public List<Incident> nearbyIncidents(final Incident incident) {
 		final List<Incident> result = new ArrayList<>();
 		for (final Incident candidate : incidents) {
-			System.out.println("Considering " + candidate.getMessage());
 			if (candidate.getLocation().rangeTo(incident.getLocation()) < 5 && withinDays(candidate.getDateTime(), incident.getDateTime(), 1)) {
 				result.add(candidate);
 			}
