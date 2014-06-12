@@ -38,7 +38,7 @@ public class SubscriptionController {
     public Response subscribe(final Subscriber subscriber) {
     	LOG.info("Subscription end point invoked");
     	subscriptionService.subscribe(subscriber);
-        return Response.ok().build();
+		return Response.ok().build();
     }
 
     @GET

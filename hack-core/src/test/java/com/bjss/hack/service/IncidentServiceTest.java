@@ -25,15 +25,15 @@ public class IncidentServiceTest {
 		georesult.setGeometry(new GeocoderGeometry());
 		georesult.getGeometry().setLocation(new LatLng(nearLondon.getLat(), nearLondon.getLng()));
 
-		final Incident incident = new Incident(georesult, DateTime.now(), "Message text");
+		final Incident incident = new Incident(georesult, new DateTime(2014, 10, 04, 14, 23, 45), "Message text");
 		
 		SubscriberStore.INSTANCE.addSubscriber(new Subscriber("1234", london));
 		
 		MessageService mockMessageService = Mockito.mock(MessageService.class);
 		
-		IncidentService incidentService = new IncidentService(mockMessageService, new LocationService());
+		IncidentService incidentService = new IncidentService(mockMessageService);
 		incidentService.report(incident);
 		
-		Mockito.verify(mockMessageService).send("1234", "Incident 1 km north of your location: Message text");
+		Mockito.verify(mockMessageService).send("1234", "Unconfirmed incident 1 km north of your location at 14:23:45 4/10/2014: Message text");
 	}
 }

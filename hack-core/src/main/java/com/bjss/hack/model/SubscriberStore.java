@@ -13,7 +13,7 @@ public enum SubscriberStore {
 	private final Map<String, Subscriber> subscribers = new HashMap<>();
 	
 	public synchronized boolean addSubscriber(final Subscriber subscriber) {
-		return subscribers.put(subscriber.getTelephone(), subscriber) != null;
+		return subscribers.put(subscriber.getTelephone(), subscriber) == null;
 	}
 
 	public Iterable<Subscriber> allSubscribers() {

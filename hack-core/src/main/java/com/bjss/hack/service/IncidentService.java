@@ -8,7 +8,6 @@ import com.bjss.hack.model.IncidentStore;
 import com.bjss.hack.model.Location;
 import com.bjss.hack.model.Subscriber;
 import com.bjss.hack.model.SubscriberStore;
-import com.bjss.hack.route.SmsSubscriptionServlet;
 import com.google.inject.Inject;
 
 public class IncidentService {
@@ -17,33 +16,32 @@ public class IncidentService {
 
 	private final MessageService messageService;
 	
-	private final LocationService locationService;
-
 	@Inject
-	public IncidentService(MessageService messageService,
-			LocationService locationService) {
+	public IncidentService(MessageService messageService) {
 		super();
 		this.messageService = messageService;
-		this.locationService = locationService;
 	}
 
 	public void report(final Incident incident) {
 		LOG.info("Incident reported: " + incident);
 		
+		boolean confirmed = IncidentStore.INSTANCE.nearbyIncidents(incident).size() > 0;
 		IncidentStore.INSTANCE.addIncident(incident);
 		
 		// Find any close registered users
-		final Location incidentLocation = locationService.location(incident.getGeoCode());
+		final Location incidentLocation = Location.fromGeoCode(incident.getGeoCode());
 		
 		for (Subscriber subscriber : SubscriberStore.INSTANCE.nearbySubscribers(incidentLocation)) {
-			messageService.send(subscriber.getTelephone(), incidentMessage(incident, incidentLocation, subscriber));
+			messageService.send(subscriber.getTelephone(), incidentMessage(incident, confirmed, incidentLocation, subscriber));
 		}
 	}
 	
-	private String incidentMessage(final Incident incident, final Location incidentLocation, final Subscriber subscriber) {
+	private String incidentMessage(final Incident incident, final boolean confirmed, final Location incidentLocation, final Subscriber subscriber) {
 		final double range = subscriber.getLocation().rangeTo(incidentLocation);
 		final double bearing = subscriber.getLocation().bearingTo(incidentLocation);
-		return String.format("Incident %.0f km %s of your location: %s", range, quadrant(bearing), incident.getMessage());
+		final String confirmationStatus = confirmed ? "Confirmed" : "Unconfirmed";
+		final String dateTime = incident.getDateTime().toString("H:m:s d/M/y");
+		return String.format("%s incident %.0f km %s of your location at %s: %s", confirmationStatus, range, quadrant(bearing), dateTime, incident.getMessage());
 	}
 	
 	private String quadrant(double bearing) {

@@ -47,7 +47,7 @@ public class SmsSubscriptionServlet extends HttpServlet {
 	
 		LOG.info("SMS message: " + requestMessage);
 		
-		final Location location = locationService.location(locationService.lookup(requestMessage));
+		final Location location = Location.fromGeoCode(locationService.lookup(requestMessage));
 		
 		String responseText;
 		if (location != null) {
