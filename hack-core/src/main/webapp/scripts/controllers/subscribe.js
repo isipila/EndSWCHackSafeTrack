@@ -13,7 +13,9 @@ angular.module('safeTrackWebApp')
         $scope.sendingSubscription = promiseTracker('sendingSubscription')
 
         $('a[href="#subscribe"]').on('shown.bs.tab', function (e) {
-            $scope.initialize()
+            $scope.initializeMap()
+            reloadMap()
+            $scope.initializeMap()
         })
 
         $scope.initialize = function() {
@@ -50,7 +52,6 @@ angular.module('safeTrackWebApp')
                 zoom: 2
             }
             $scope.marker = {}
-            reloadMap()
         }
 
         $scope.updateMap = function(details) {

@@ -13,6 +13,7 @@ angular.module('safeTrackWebApp')
         $scope.sendingReport = promiseTracker('sendingReport')
 
         $('a[href="#report"]').on('shown.bs.tab', function (e) {
+            reloadMap()
             $scope.initialize()
         })
 
@@ -51,7 +52,6 @@ angular.module('safeTrackWebApp')
                 zoom: 2
             }
             $scope.marker = {}
-            reloadMap()
         }
 
         $scope.updateMap = function(details) {
